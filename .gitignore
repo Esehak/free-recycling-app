@@ -1,0 +1,6 @@
+#  ignore these
+free-recycling-app.iml
+
+# dependencies
+/node_modules
+
