@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="well well-sm">
+    <strong>Item Category</strong>
+    <div class="btn-group">
+      <a id="list" [ngClass]="{'btn' : true, 'btn-default':true, 'btn-sm':true,'active': selectedCategory == 'Offered'}" (click) = "changeCategory('Offered')">
+        <span class="glyphicon glyphicon-th-list"></span>
+        Offered
+      </a>
+      <a id="grid" [ngClass]="{'btn':true, 'btn-default':true, 'btn-sm':true, 'active': selectedCategory == 'Wanted'}" (click)="changeCategory('Wanted')">
+        <span class="glyphicon glyphicon-th"></span>
+        Wanted
+      </a>
+    </div>
+  </div>
+  <div id="items" class="row list-group">
+    <div *ngIf="itemsList && itemsList.length <= 0" class="item">
+      Sorry, this list is empty :(
+    </div>
+
+    <div *ngFor="let item of itemsList" (click) = "onItemClick(item)">
+      <div  class="item col-xs-4 col-lg-3" *ngIf="item.category.includes(selectedCategory)">
+        <div class="thumbnail">
+          <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+          <div class="caption">
+            <h4 class="group inner list-group-item-heading">{{ item.name }}</h4>
+            <p class="group inner list-group-item-text" >{{ item.shortDescription }}</p>
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <span class="badge">{{ item.category }}</span>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                {{ item.city }}, {{ item.state }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.cityBox {
+  width: 130px;
+  height: 60px;
+  margin: 5px;
+  padding: 20px;
+  font-size: 1.21em;
+  float: left;
+}

@@ -1,0 +1,9 @@
+<div class="row list-group">
+  <div *ngFor="let state of stateList" class="item  col-xs-2 col-lg-1" (click) = "onStateClick(state)">
+    <div class="thumbnail">
+      <div class="caption">
+        <h4 class="group inner list-group-item-heading">{{state}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
